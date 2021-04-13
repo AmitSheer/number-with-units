@@ -15,13 +15,14 @@
 namespace ariel{
     class NumberWithUnits{
     private:
-        static std::unordered_map<std::string,std::unordered_map<std::string,int>> types_and_conversions;
+        static std::unordered_map<std::string,std::unordered_map<std::string,double>> types_and_conversions;
         double unit_value;
         std::string unit_type;
+        static void update_units_map(const double& left_value,const std::string& left_type,const double& right_value,const std::string& right_type);
         double convert_units(const std::string src_t,const std::string dest_t,const double& src_val);
     public:
         NumberWithUnits(double value,std::string type){};
-        double getValue(){
+        double getValue() const{
             return unit_value;
         };
         std::string getType(){

@@ -13,7 +13,7 @@ using namespace doctest;
 #include "NumberWithUnits.hpp"
 using namespace ariel;
 
-const std::string test_file = "units.txt";
+const std::string test_file = "./units.txt";
 
 
 
