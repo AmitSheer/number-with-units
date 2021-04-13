@@ -72,6 +72,7 @@ CMAKE_BINARY_DIR = /home/amit/CLionProjects/number-with-units/cmake-build-debug
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/Demo.dir/all
 all: CMakeFiles/untitled.dir/all
 
 .PHONY : all
@@ -82,9 +83,37 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/Demo.dir/clean
 clean: CMakeFiles/untitled.dir/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/Demo.dir
+
+# All Build rule for target.
+CMakeFiles/Demo.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Demo.dir/build.make CMakeFiles/Demo.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Demo.dir/build.make CMakeFiles/Demo.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/amit/CLionProjects/number-with-units/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target Demo"
+.PHONY : CMakeFiles/Demo.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/Demo.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/amit/CLionProjects/number-with-units/cmake-build-debug/CMakeFiles 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Demo.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/amit/CLionProjects/number-with-units/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/Demo.dir/rule
+
+# Convenience name for target.
+Demo: CMakeFiles/Demo.dir/rule
+
+.PHONY : Demo
+
+# clean rule for target.
+CMakeFiles/Demo.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Demo.dir/build.make CMakeFiles/Demo.dir/clean
+.PHONY : CMakeFiles/Demo.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/untitled.dir
@@ -93,7 +122,7 @@ clean: CMakeFiles/untitled.dir/clean
 CMakeFiles/untitled.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/amit/CLionProjects/number-with-units/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4 "Built target untitled"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/amit/CLionProjects/number-with-units/cmake-build-debug/CMakeFiles --progress-num=4,5,6,7 "Built target untitled"
 .PHONY : CMakeFiles/untitled.dir/all
 
 # Build rule for subdir invocation for target.

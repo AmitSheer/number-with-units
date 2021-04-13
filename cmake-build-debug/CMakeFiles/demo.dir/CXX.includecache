@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/amit/CLionProjects/number-with-units/NumberWithUnits.cpp
+iostream
+-
+string
+-
+unordered_map
+-
+fstream
+-
+sstream
+-
+stdexcept
+-
+utility
+-
+list
+-
+vector
+-
+NumberWithUnits.hpp
+/home/amit/CLionProjects/number-with-units/NumberWithUnits.hpp
+
+/home/amit/CLionProjects/number-with-units/NumberWithUnits.hpp
+iostream
+-
+string
+-
+unordered_map
+-
+fstream
+-
+sstream
+-
+stdexcept
+-
+utility
+-
+

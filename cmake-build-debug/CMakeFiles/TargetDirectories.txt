@@ -1,3 +1,4 @@
 /home/amit/CLionProjects/number-with-units/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /home/amit/CLionProjects/number-with-units/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/amit/CLionProjects/number-with-units/cmake-build-debug/CMakeFiles/Demo.dir
 /home/amit/CLionProjects/number-with-units/cmake-build-debug/CMakeFiles/untitled.dir

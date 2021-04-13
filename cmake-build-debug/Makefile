@@ -130,6 +130,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named Demo
+
+# Build rule for target.
+Demo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Demo
+.PHONY : Demo
+
+# fast build rule for target.
+Demo/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Demo.dir/build.make CMakeFiles/Demo.dir/build
+.PHONY : Demo/fast
+
+#=============================================================================
 # Target rules for targets named untitled
 
 # Build rule for target.
@@ -142,12 +155,40 @@ untitled/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/build
 .PHONY : untitled/fast
 
+Demo.o: Demo.cpp.o
+
+.PHONY : Demo.o
+
+# target to build an object file
+Demo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Demo.dir/build.make CMakeFiles/Demo.dir/Demo.cpp.o
+.PHONY : Demo.cpp.o
+
+Demo.i: Demo.cpp.i
+
+.PHONY : Demo.i
+
+# target to preprocess a source file
+Demo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Demo.dir/build.make CMakeFiles/Demo.dir/Demo.cpp.i
+.PHONY : Demo.cpp.i
+
+Demo.s: Demo.cpp.s
+
+.PHONY : Demo.s
+
+# target to generate assembly for a file
+Demo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Demo.dir/build.make CMakeFiles/Demo.dir/Demo.cpp.s
+.PHONY : Demo.cpp.s
+
 NumberWithUnits.o: NumberWithUnits.cpp.o
 
 .PHONY : NumberWithUnits.o
 
 # target to build an object file
 NumberWithUnits.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Demo.dir/build.make CMakeFiles/Demo.dir/NumberWithUnits.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/NumberWithUnits.cpp.o
 .PHONY : NumberWithUnits.cpp.o
 
@@ -157,6 +198,7 @@ NumberWithUnits.i: NumberWithUnits.cpp.i
 
 # target to preprocess a source file
 NumberWithUnits.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Demo.dir/build.make CMakeFiles/Demo.dir/NumberWithUnits.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/NumberWithUnits.cpp.i
 .PHONY : NumberWithUnits.cpp.i
 
@@ -166,6 +208,7 @@ NumberWithUnits.s: NumberWithUnits.cpp.s
 
 # target to generate assembly for a file
 NumberWithUnits.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Demo.dir/build.make CMakeFiles/Demo.dir/NumberWithUnits.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/NumberWithUnits.cpp.s
 .PHONY : NumberWithUnits.cpp.s
 
@@ -231,7 +274,11 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... Demo"
 	@echo "... untitled"
+	@echo "... Demo.o"
+	@echo "... Demo.i"
+	@echo "... Demo.s"
 	@echo "... NumberWithUnits.o"
 	@echo "... NumberWithUnits.i"
 	@echo "... NumberWithUnits.s"
