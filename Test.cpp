@@ -85,28 +85,129 @@ TEST_CASE("operator - unary") {
 }
 
 TEST_CASE("operator ==") {
+    ifstream units_file{test_file};
+    NumberWithUnits::read_units(units_file);
+    CHECK(NumberWithUnits(5,"kg")==NumberWithUnits(5,"kg"));
+    CHECK(NumberWithUnits(5,"kg")==NumberWithUnits(5000,"g"));
+            CHECK_THROWS(NumberWithUnits(5,"km")==NumberWithUnits(5,"kg"));
+
 }
 TEST_CASE("operator <=") {
+    ifstream units_file{test_file};
+    NumberWithUnits::read_units(units_file);
+    CHECK(NumberWithUnits(5,"kg")<=NumberWithUnits(5,"kg"));
+    CHECK(NumberWithUnits(5,"kg")<=NumberWithUnits(6,"kg"));
+    CHECK_FALSE(NumberWithUnits(6,"kg")<=NumberWithUnits(5,"kg"));
+    CHECK(NumberWithUnits(5,"kg")<=NumberWithUnits(5000,"g"));
+    CHECK(NumberWithUnits(5,"kg")<=NumberWithUnits(6000,"g"));
+            CHECK_THROWS(NumberWithUnits(5,"km")<=NumberWithUnits(5,"kg"));
 }
 TEST_CASE("operator >=") {
+    ifstream units_file{test_file};
+    NumberWithUnits::read_units(units_file);
+            CHECK(NumberWithUnits(5,"kg")>=NumberWithUnits(5,"kg"));
+            CHECK_FALSE(NumberWithUnits(5,"kg")>=NumberWithUnits(6,"kg"));
+            CHECK(NumberWithUnits(6,"kg")>=NumberWithUnits(5,"kg"));
+            CHECK(NumberWithUnits(5,"kg")>=NumberWithUnits(5000,"g"));
+            CHECK_FALSE(NumberWithUnits(5,"kg")>=NumberWithUnits(6000,"g"));
+            CHECK(NumberWithUnits(6000,"g")>=NumberWithUnits(5,"kg"));
+            CHECK_THROWS(NumberWithUnits(5,"km")>=NumberWithUnits(5,"kg"));
 }
 TEST_CASE("operator <") {
+    ifstream units_file{test_file};
+    NumberWithUnits::read_units(units_file);
+            CHECK_FALSE(NumberWithUnits(5,"kg")<NumberWithUnits(5,"kg"));
+            CHECK(NumberWithUnits(5,"kg")<NumberWithUnits(6,"kg"));
+            CHECK_FALSE(NumberWithUnits(6,"kg")<NumberWithUnits(5,"kg"));
+            CHECK_FALSE(NumberWithUnits(5,"kg")<NumberWithUnits(5000,"g"));
+            CHECK(NumberWithUnits(5,"kg")<NumberWithUnits(6000,"g"));
+            CHECK_THROWS(NumberWithUnits(5,"km")<NumberWithUnits(5,"kg"));
 }
 TEST_CASE("operator >") {
+    ifstream units_file{test_file};
+    NumberWithUnits::read_units(units_file);
+            CHECK_FALSE(NumberWithUnits(5,"kg")>NumberWithUnits(5,"kg"));
+            CHECK_FALSE(NumberWithUnits(5,"kg")>NumberWithUnits(6,"kg"));
+            CHECK(NumberWithUnits(6,"kg")>NumberWithUnits(5,"kg"));
+            CHECK_FALSE(NumberWithUnits(5,"kg")>NumberWithUnits(5000,"g"));
+            CHECK_FALSE(NumberWithUnits(5,"kg")>NumberWithUnits(6000,"g"));
+            CHECK(NumberWithUnits(6000,"g")>NumberWithUnits(5,"kg"));
+    CHECK_THROWS(NumberWithUnits(5,"km")>NumberWithUnits(5,"kg"));
 }
 TEST_CASE("operator --num") {
+    ifstream units_file{test_file};
+    NumberWithUnits::read_units(units_file);
+    NumberWithUnits a(5,"kg");
+    NumberWithUnits b = --a;
+    CHECK(a.getValue()==4);
+            CHECK(a.getType()=="kg");
+            CHECK(b.getValue()==5);
+            CHECK(b.getType()=="kg");
 }
 TEST_CASE("operator num--") {
+    ifstream units_file{test_file};
+    NumberWithUnits::read_units(units_file);
+    NumberWithUnits a(5,"kg");
+    NumberWithUnits b = a--;
+    CHECK(a.getValue()==4);
+    CHECK(a.getType()=="kg");
+    CHECK(b.getValue()==4);
+    CHECK(b.getType()=="kg");
 }
-TEST_CASE("operator --num") {
+TEST_CASE("operator ++num") {
+    ifstream units_file{test_file};
+    NumberWithUnits::read_units(units_file);
+    NumberWithUnits a(5,"kg");
+    NumberWithUnits b = ++a;
+            CHECK(a.getValue()==6);
+            CHECK(a.getType()=="kg");
+            CHECK(b.getValue()==5);
+            CHECK(b.getType()=="kg");
 }
-TEST_CASE("operator num--") {
+TEST_CASE("operator num++") {
+    ifstream units_file{test_file};
+    NumberWithUnits::read_units(units_file);
+    NumberWithUnits a(5,"kg");
+    NumberWithUnits b = a++;
+            CHECK(a.getValue()==6);
+            CHECK(a.getType()=="kg");
+            CHECK(b.getValue()==6);
+            CHECK(b.getType()=="kg");
 }
 TEST_CASE("operator *") {
+    ifstream units_file{test_file};
+    NumberWithUnits::read_units(units_file);
+    double num =1.5;
+    NumberWithUnits a(5,"kg");
+    NumberWithUnits b = a*num;
+            CHECK(a.getValue()==5);
+            CHECK(a.getType()=="kg");
+            CHECK(b.getValue()==7.5);
+            CHECK(b.getType()=="kg");
+    NumberWithUnits c = num*a;
+            CHECK(a.getValue()==5);
+            CHECK(a.getType()=="kg");
+            CHECK(b.getValue()==7.5);
+            CHECK(b.getType()=="kg");
 }
 
 TEST_CASE("operator <<") {
+    ifstream units_file{test_file};
+    NumberWithUnits::read_units(units_file);
+    NumberWithUnits a(5,"kg");
+    stringstream str;
+    str << a<< endl;
+    CHECK(str.str()=="4[kg]");
 }
 TEST_CASE("operator >>") {
+    ifstream units_file{test_file};
+    NumberWithUnits::read_units(units_file);
+    NumberWithUnits a(5,"kg");
+    istringstream str{"700 [ ton ]"};
+    str >> a;
+    CHECK(str.str()=="700[kg]");
+    istringstream str2("700 [ blalalal ]");
+    CHECK_THROWS(str2 >> a);
+    CHECK(str.str()=="700[kg]");
 }
 
