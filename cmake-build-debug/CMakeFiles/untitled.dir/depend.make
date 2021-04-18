@@ -4,5 +4,7 @@
 CMakeFiles/untitled.dir/NumberWithUnits.cpp.o: ../NumberWithUnits.cpp
 CMakeFiles/untitled.dir/NumberWithUnits.cpp.o: ../NumberWithUnits.hpp
 
-CMakeFiles/untitled.dir/main.cpp.o: ../main.cpp
+CMakeFiles/untitled.dir/Test.cpp.o: ../NumberWithUnits.hpp
+CMakeFiles/untitled.dir/Test.cpp.o: ../Test.cpp
+CMakeFiles/untitled.dir/Test.cpp.o: ../doctest.h
 

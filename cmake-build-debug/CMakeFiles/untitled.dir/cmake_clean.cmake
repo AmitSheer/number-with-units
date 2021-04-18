@@ -1,7 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/untitled.dir/NumberWithUnits.cpp.o"
   "CMakeFiles/untitled.dir/Test.cpp.o"
-  "CMakeFiles/untitled.dir/main.cpp.o"
   "untitled"
   "untitled.pdb"
 )

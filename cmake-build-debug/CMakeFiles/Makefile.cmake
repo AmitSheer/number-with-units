@@ -22,9 +22,11 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/snap/clion/149/bin/cmake/linux/share/cmake-3.19/Modules/CMakeSystemSpecificInformation.cmake"
   "/snap/clion/149/bin/cmake/linux/share/cmake-3.19/Modules/CMakeSystemSpecificInitialize.cmake"
   "/snap/clion/149/bin/cmake/linux/share/cmake-3.19/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+  "/snap/clion/149/bin/cmake/linux/share/cmake-3.19/Modules/Compiler/Clang-CXX.cmake"
+  "/snap/clion/149/bin/cmake/linux/share/cmake-3.19/Modules/Compiler/Clang.cmake"
   "/snap/clion/149/bin/cmake/linux/share/cmake-3.19/Modules/Compiler/GNU-C.cmake"
-  "/snap/clion/149/bin/cmake/linux/share/cmake-3.19/Modules/Compiler/GNU-CXX.cmake"
   "/snap/clion/149/bin/cmake/linux/share/cmake-3.19/Modules/Compiler/GNU.cmake"
+  "/snap/clion/149/bin/cmake/linux/share/cmake-3.19/Modules/Platform/Linux-Clang-CXX.cmake"
   "/snap/clion/149/bin/cmake/linux/share/cmake-3.19/Modules/Platform/Linux-GNU-C.cmake"
   "/snap/clion/149/bin/cmake/linux/share/cmake-3.19/Modules/Platform/Linux-GNU-CXX.cmake"
   "/snap/clion/149/bin/cmake/linux/share/cmake-3.19/Modules/Platform/Linux-GNU.cmake"
@@ -46,6 +48,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/test.dir/DependInfo.cmake"
   "CMakeFiles/Demo.dir/DependInfo.cmake"
-  "CMakeFiles/untitled.dir/DependInfo.cmake"
   )

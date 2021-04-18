@@ -16,12 +16,13 @@ namespace ariel{
     class NumberWithUnits{
     private:
         static std::unordered_map<std::string,std::unordered_map<std::string,double>> types_and_conversions;
-        double unit_value;
+        double unit_value{};
         std::string unit_type;
         static void update_units_map(const double& left_value,const std::string& left_type,const double& right_value,const std::string& right_type);
-        double convert_units(const std::string src_t,const std::string dest_t,const double& src_val);
+        static void type_validation(const std::string& src_t,const std::string& dest_t);
+        double convert(const NumberWithUnits& num) const;
     public:
-        NumberWithUnits(double value,std::string type){};
+        NumberWithUnits(double value,const std::string& type);
         double getValue() const{
             return unit_value;
         };
@@ -29,41 +30,18 @@ namespace ariel{
             return unit_type;
         };
         static void read_units(std::ifstream& units_file);
-        friend std::istream& operator>>(std::istream& is, NumberWithUnits& unit){
-            return is;
-        };
-        friend std::ostream& operator<<(std::ostream& os,const NumberWithUnits& unit){
-            os<<unit.unit_value<<"["<<unit.unit_type<<"]";
-            return os;
-        };
-        NumberWithUnits& operator+=(const NumberWithUnits& num){return *this;}
-        NumberWithUnits& operator-=(const NumberWithUnits& num){return *this;}
+        friend std::istream& operator>>(std::istream& is, NumberWithUnits& unit);
+        friend std::ostream& operator<<(std::ostream& os,const NumberWithUnits& unit);
+        NumberWithUnits& operator+=(const NumberWithUnits& num);
+        NumberWithUnits& operator-=(const NumberWithUnits& num);
         //----------------------------
         //arithmetic operators that affect the object(this)
-        NumberWithUnits& operator--(){
-            unit_value--;
-            return *this;
-        }
-        NumberWithUnits operator--(int flag){
-            NumberWithUnits copy = *this;
-            unit_value--;
-            return copy;
-        }
-        NumberWithUnits& operator++(){
-            unit_value++;
-            return *this;
-        }
-        NumberWithUnits operator++(int flag){
-            NumberWithUnits copy = *this;
-            unit_value++;
-            return copy;
-        }
-        friend NumberWithUnits operator-(const NumberWithUnits& num1,const NumberWithUnits& num2){
-            return NumberWithUnits(1,"al");
-        };
-        friend NumberWithUnits operator+(const NumberWithUnits& num1,const NumberWithUnits& num2){
-            return NumberWithUnits(1,"al");
-        };
+        NumberWithUnits& operator--();
+        NumberWithUnits operator--(int);
+        NumberWithUnits& operator++();
+        NumberWithUnits operator++(int);
+        NumberWithUnits operator-(const NumberWithUnits& num) const;
+        NumberWithUnits operator+(const NumberWithUnits& num) const;
         friend NumberWithUnits operator*(const NumberWithUnits& num1,const double num2){
             return NumberWithUnits(num1.unit_value*num2,num1.unit_type);
         };
@@ -78,18 +56,12 @@ namespace ariel{
             return NumberWithUnits(std::abs(unit_value),unit_type);
         };
 
-        friend bool operator==(const NumberWithUnits& num1, const NumberWithUnits& num2){
-            return num1.unit_value==num2.unit_value&& num1.unit_type.compare(num2.unit_type);
-        };
-        friend bool operator<=(NumberWithUnits const& num1, NumberWithUnits const& num2){return false;};
-        friend bool operator>=(NumberWithUnits const& num1, NumberWithUnits const& num2){return false;};
-        friend bool operator!=(NumberWithUnits const& num1, NumberWithUnits const& num2){return false;};
-        friend bool operator<(NumberWithUnits const& num1, NumberWithUnits const& num2){return false;};
-        friend bool operator>(NumberWithUnits const& num1, NumberWithUnits const& num2){return false;};
+        bool operator==(const NumberWithUnits& num) const;
+        bool operator<=(const NumberWithUnits& num) const;
+        bool operator>=(NumberWithUnits const& num) const;
+        bool operator!=(NumberWithUnits const& num) const;
+        bool operator<(NumberWithUnits const& num) const;
+        bool operator>(NumberWithUnits const& num) const;
     };
-    //----------------------------
-    //arithmetic operators that don't affect the object(this)
-
-
 }
 

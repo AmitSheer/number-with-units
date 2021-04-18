@@ -79,28 +79,28 @@ include CMakeFiles/Demo.dir/flags.make
 CMakeFiles/Demo.dir/Demo.cpp.o: CMakeFiles/Demo.dir/flags.make
 CMakeFiles/Demo.dir/Demo.cpp.o: ../Demo.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amit/CLionProjects/number-with-units/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Demo.dir/Demo.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Demo.dir/Demo.cpp.o -c /home/amit/CLionProjects/number-with-units/Demo.cpp
+	/usr/bin/clang++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Demo.dir/Demo.cpp.o -c /home/amit/CLionProjects/number-with-units/Demo.cpp
 
 CMakeFiles/Demo.dir/Demo.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Demo.dir/Demo.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amit/CLionProjects/number-with-units/Demo.cpp > CMakeFiles/Demo.dir/Demo.cpp.i
+	/usr/bin/clang++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amit/CLionProjects/number-with-units/Demo.cpp > CMakeFiles/Demo.dir/Demo.cpp.i
 
 CMakeFiles/Demo.dir/Demo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Demo.dir/Demo.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amit/CLionProjects/number-with-units/Demo.cpp -o CMakeFiles/Demo.dir/Demo.cpp.s
+	/usr/bin/clang++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amit/CLionProjects/number-with-units/Demo.cpp -o CMakeFiles/Demo.dir/Demo.cpp.s
 
 CMakeFiles/Demo.dir/NumberWithUnits.cpp.o: CMakeFiles/Demo.dir/flags.make
 CMakeFiles/Demo.dir/NumberWithUnits.cpp.o: ../NumberWithUnits.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amit/CLionProjects/number-with-units/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Demo.dir/NumberWithUnits.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Demo.dir/NumberWithUnits.cpp.o -c /home/amit/CLionProjects/number-with-units/NumberWithUnits.cpp
+	/usr/bin/clang++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Demo.dir/NumberWithUnits.cpp.o -c /home/amit/CLionProjects/number-with-units/NumberWithUnits.cpp
 
 CMakeFiles/Demo.dir/NumberWithUnits.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Demo.dir/NumberWithUnits.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amit/CLionProjects/number-with-units/NumberWithUnits.cpp > CMakeFiles/Demo.dir/NumberWithUnits.cpp.i
+	/usr/bin/clang++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amit/CLionProjects/number-with-units/NumberWithUnits.cpp > CMakeFiles/Demo.dir/NumberWithUnits.cpp.i
 
 CMakeFiles/Demo.dir/NumberWithUnits.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Demo.dir/NumberWithUnits.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amit/CLionProjects/number-with-units/NumberWithUnits.cpp -o CMakeFiles/Demo.dir/NumberWithUnits.cpp.s
+	/usr/bin/clang++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amit/CLionProjects/number-with-units/NumberWithUnits.cpp -o CMakeFiles/Demo.dir/NumberWithUnits.cpp.s
 
 # Object files for target Demo
 Demo_OBJECTS = \

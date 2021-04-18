@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/amit/CLionProjects/number-with-units/NumberWithUnits.cpp" "/home/amit/CLionProjects/number-with-units/cmake-build-debug/CMakeFiles/demo.dir/NumberWithUnits.cpp.o"
-  "/home/amit/CLionProjects/number-with-units/demo.cpp" "/home/amit/CLionProjects/number-with-units/cmake-build-debug/CMakeFiles/demo.dir/demo.cpp.o"
+  "/home/amit/CLionProjects/number-with-units/NumberWithUnits.cpp" "/home/amit/CLionProjects/number-with-units/cmake-build-debug/CMakeFiles/test.dir/NumberWithUnits.cpp.o"
+  "/home/amit/CLionProjects/number-with-units/Test.cpp" "/home/amit/CLionProjects/number-with-units/cmake-build-debug/CMakeFiles/test.dir/Test.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "Clang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

@@ -1,4 +1,4 @@
-/snap/clion/149/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/amit/CLionProjects/number-with-units
+/snap/clion/149/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=/usr/bin/clang++-9 -G "CodeBlocks - Unix Makefiles" /home/amit/CLionProjects/number-with-units
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /home/amit/CLionProjects/number-with-units/cmake-build-debug

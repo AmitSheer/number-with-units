@@ -6,9 +6,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/amit/CLionProjects/number-with-units/NumberWithUnits.cpp" "/home/amit/CLionProjects/number-with-units/cmake-build-debug/CMakeFiles/untitled.dir/NumberWithUnits.cpp.o"
   "/home/amit/CLionProjects/number-with-units/Test.cpp" "/home/amit/CLionProjects/number-with-units/cmake-build-debug/CMakeFiles/untitled.dir/Test.cpp.o"
-  "/home/amit/CLionProjects/number-with-units/main.cpp" "/home/amit/CLionProjects/number-with-units/cmake-build-debug/CMakeFiles/untitled.dir/main.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "Clang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

@@ -4,5 +4,7 @@
 CMakeFiles/untitled.dir/NumberWithUnits.cpp.o
  /home/amit/CLionProjects/number-with-units/NumberWithUnits.cpp
  /home/amit/CLionProjects/number-with-units/NumberWithUnits.hpp
-CMakeFiles/untitled.dir/main.cpp.o
- /home/amit/CLionProjects/number-with-units/main.cpp
+CMakeFiles/untitled.dir/Test.cpp.o
+ /home/amit/CLionProjects/number-with-units/NumberWithUnits.hpp
+ /home/amit/CLionProjects/number-with-units/Test.cpp
+ /home/amit/CLionProjects/number-with-units/doctest.h

@@ -130,6 +130,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named test
+
+# Build rule for target.
+test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test
+.PHONY : test
+
+# fast build rule for target.
+test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
+.PHONY : test/fast
+
+#=============================================================================
 # Target rules for targets named Demo
 
 # Build rule for target.
@@ -141,19 +154,6 @@ Demo: cmake_check_build_system
 Demo/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Demo.dir/build.make CMakeFiles/Demo.dir/build
 .PHONY : Demo/fast
-
-#=============================================================================
-# Target rules for targets named untitled
-
-# Build rule for target.
-untitled: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 untitled
-.PHONY : untitled
-
-# fast build rule for target.
-untitled/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/build
-.PHONY : untitled/fast
 
 Demo.o: Demo.cpp.o
 
@@ -188,8 +188,8 @@ NumberWithUnits.o: NumberWithUnits.cpp.o
 
 # target to build an object file
 NumberWithUnits.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/NumberWithUnits.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Demo.dir/build.make CMakeFiles/Demo.dir/NumberWithUnits.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/NumberWithUnits.cpp.o
 .PHONY : NumberWithUnits.cpp.o
 
 NumberWithUnits.i: NumberWithUnits.cpp.i
@@ -198,8 +198,8 @@ NumberWithUnits.i: NumberWithUnits.cpp.i
 
 # target to preprocess a source file
 NumberWithUnits.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/NumberWithUnits.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Demo.dir/build.make CMakeFiles/Demo.dir/NumberWithUnits.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/NumberWithUnits.cpp.i
 .PHONY : NumberWithUnits.cpp.i
 
 NumberWithUnits.s: NumberWithUnits.cpp.s
@@ -208,8 +208,8 @@ NumberWithUnits.s: NumberWithUnits.cpp.s
 
 # target to generate assembly for a file
 NumberWithUnits.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/NumberWithUnits.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Demo.dir/build.make CMakeFiles/Demo.dir/NumberWithUnits.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/NumberWithUnits.cpp.s
 .PHONY : NumberWithUnits.cpp.s
 
 Test.o: Test.cpp.o
@@ -218,7 +218,7 @@ Test.o: Test.cpp.o
 
 # target to build an object file
 Test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/Test.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Test.cpp.o
 .PHONY : Test.cpp.o
 
 Test.i: Test.cpp.i
@@ -227,7 +227,7 @@ Test.i: Test.cpp.i
 
 # target to preprocess a source file
 Test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/Test.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Test.cpp.i
 .PHONY : Test.cpp.i
 
 Test.s: Test.cpp.s
@@ -236,35 +236,8 @@ Test.s: Test.cpp.s
 
 # target to generate assembly for a file
 Test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/Test.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Test.cpp.s
 .PHONY : Test.cpp.s
-
-main.o: main.cpp.o
-
-.PHONY : main.o
-
-# target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/main.cpp.o
-.PHONY : main.cpp.o
-
-main.i: main.cpp.i
-
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/main.cpp.s
-.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -275,7 +248,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Demo"
-	@echo "... untitled"
+	@echo "... test"
 	@echo "... Demo.o"
 	@echo "... Demo.i"
 	@echo "... Demo.s"
@@ -285,9 +258,6 @@ help:
 	@echo "... Test.o"
 	@echo "... Test.i"
 	@echo "... Test.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
 .PHONY : help
 
 

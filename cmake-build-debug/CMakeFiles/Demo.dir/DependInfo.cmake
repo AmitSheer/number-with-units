@@ -7,7 +7,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/amit/CLionProjects/number-with-units/Demo.cpp" "/home/amit/CLionProjects/number-with-units/cmake-build-debug/CMakeFiles/Demo.dir/Demo.cpp.o"
   "/home/amit/CLionProjects/number-with-units/NumberWithUnits.cpp" "/home/amit/CLionProjects/number-with-units/cmake-build-debug/CMakeFiles/Demo.dir/NumberWithUnits.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "Clang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
