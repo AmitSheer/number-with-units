@@ -1,7 +1,7 @@
 //
 // Created by amit on 08/04/2021.
 //
-//#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "doctest.h"
 #include "doctest.h"
 #include <string>
@@ -68,14 +68,7 @@ TEST_CASE("operator -=") {
     CHECK((NumberWithUnits(1,"kg")-=NumberWithUnits(1,"kg"))==NumberWithUnits(0,"kg"));
     CHECK((NumberWithUnits(1,"kg")-=NumberWithUnits(1,"g"))==NumberWithUnits(0.999,"kg"));
     CHECK((NumberWithUnits(1,"g")-=NumberWithUnits(1,"kg"))==NumberWithUnits(-999,"g"));
-//    NumberWithUnits a(1,"g");
-//    a-=NumberWithUnits(1,"ton");
-//    CHECK(a.getValue()==-999999.0);
-//    CHECK(a.getType()=="g");
-//    NumberWithUnits b(1,"ton");
-//    b-=NumberWithUnits(1,"g");
-//    CHECK(b.getValue()==0.999999);
-//    CHECK(b.getType()=="ton");
+
     CHECK((NumberWithUnits(1,"ton")-=NumberWithUnits(1,"g"))==NumberWithUnits(0.999999,"ton"));
     CHECK((NumberWithUnits(1,"g")-=NumberWithUnits(1,"ton"))==NumberWithUnits(-999999.0,"g"));
     CHECK_THROWS_MESSAGE(NumberWithUnits(1,"kg")-=NumberWithUnits(1,"sec"),"Types not from the same system");
@@ -146,10 +139,10 @@ TEST_CASE("operator --num") {
     ifstream units_file{test_file};
     NumberWithUnits::read_units(units_file);
     NumberWithUnits a(5,"kg");
-    NumberWithUnits b = a--;
+    NumberWithUnits b = --a;
     CHECK(a.getValue()==4);
     CHECK(a.getType()=="kg");
-    CHECK(b.getValue()==5);
+    CHECK(b.getValue()==4);
     CHECK(b.getType()=="kg");
 }
 TEST_CASE("operator num--") {
@@ -159,7 +152,7 @@ TEST_CASE("operator num--") {
     NumberWithUnits b = a--;
     CHECK(a.getValue()==4);
     CHECK(a.getType()=="kg");
-    CHECK(b.getValue()==4);
+    CHECK(b.getValue()==5);
     CHECK(b.getType()=="kg");
 }
 TEST_CASE("operator ++num") {
@@ -169,7 +162,7 @@ TEST_CASE("operator ++num") {
     NumberWithUnits b = ++a;
             CHECK(a.getValue()==6);
             CHECK(a.getType()=="kg");
-            CHECK(b.getValue()==5);
+            CHECK(b.getValue()==6);
             CHECK(b.getType()=="kg");
 }
 TEST_CASE("operator num++") {
@@ -179,7 +172,7 @@ TEST_CASE("operator num++") {
     NumberWithUnits b = a++;
             CHECK(a.getValue()==6);
             CHECK(a.getType()=="kg");
-            CHECK(b.getValue()==6);
+            CHECK(b.getValue()==5);
             CHECK(b.getType()=="kg");
 }
 TEST_CASE("operator *") {

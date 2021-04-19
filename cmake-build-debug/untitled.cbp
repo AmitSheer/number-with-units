@@ -144,6 +144,9 @@
 		<Unit filename="/home/amit/CLionProjects/number-with-units/Test.cpp">
 			<Option target="test"/>
 		</Unit>
+		<Unit filename="/home/amit/CLionProjects/number-with-units/Test.hpp">
+			<Option target="test"/>
+		</Unit>
 		<Unit filename="/home/amit/CLionProjects/number-with-units/doctest.h">
 			<Option target="test"/>
 		</Unit>

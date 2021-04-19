@@ -6,5 +6,6 @@ CMakeFiles/test.dir/NumberWithUnits.cpp.o: ../NumberWithUnits.hpp
 
 CMakeFiles/test.dir/Test.cpp.o: ../NumberWithUnits.hpp
 CMakeFiles/test.dir/Test.cpp.o: ../Test.cpp
+CMakeFiles/test.dir/Test.cpp.o: ../Test.hpp
 CMakeFiles/test.dir/Test.cpp.o: ../doctest.h
 

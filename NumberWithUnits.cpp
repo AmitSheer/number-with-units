@@ -29,12 +29,12 @@ void ariel::NumberWithUnits::read_units(ifstream &units_file) {
             istringstream stream(str);
             stream >> left_value >> left_type >> right_value >> right_type;
 //            cout<< left_type<<"->"<<right_type<<endl;
-            for (int i = 0; i < left_type.length(); i++) {
-                left_type.at((unsigned long)i) = std::tolower(left_type.at((unsigned long)i));
-            }
-            for (int i = 0; i < right_type.length(); i++) {
-                right_type.at((unsigned long)i) = std::tolower(right_type.at((unsigned long)i));
-            }
+//            for (int i = 0; i < left_type.length(); i++) {
+//                left_type.at((unsigned long)i) = std::tolower(left_type.at((unsigned long)i));
+//            }
+//            for (int i = 0; i < right_type.length(); i++) {
+//                right_type.at((unsigned long)i) = std::tolower(right_type.at((unsigned long)i));
+//            }
             update_units_map(left_value, left_type, right_value, right_type);
 
         }
