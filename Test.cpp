@@ -1,7 +1,7 @@
 //
 // Created by amit on 08/04/2021.
 //
-#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+//#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "doctest.h"
 #include "doctest.h"
 #include <string>
