@@ -63,24 +63,17 @@ ariel::NumberWithUnits::NumberWithUnits(double value, const std::string& type) {
 }
 
 std::istream &ariel::operator>>(istream &is, ariel::NumberWithUnits &unit) {
-    double temp_val;
+    double temp_val=0;
     std::string temp_type;
-    char c;
+    char c=']';
     is >> temp_val;
-    is>> c ;
+    is >> c ;
     while(c!=']'){
         if(c!='['){
             temp_type.insert(temp_type.end(),c);
         }
         is>>c;
     }
-//    if(temp_type.at(0)=='['){
-//        temp_type.erase(0,1);
-//    }
-//    if(temp_type.at(temp_type.length()-1)==']'){
-//        temp_type.erase(temp_type.length()-1,1);
-//    }
-//    is.putback(temp_type)
     ariel::NumberWithUnits::type_validation(temp_type,temp_type);
     unit.unit_value=temp_val;
     unit.unit_type=temp_type;
