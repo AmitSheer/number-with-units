@@ -212,32 +212,32 @@ NumberWithUnits.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Demo.dir/build.make CMakeFiles/Demo.dir/NumberWithUnits.cpp.s
 .PHONY : NumberWithUnits.cpp.s
 
-Test.o: Test.cpp.o
+StudentTest3.o: StudentTest3.cpp.o
 
-.PHONY : Test.o
+.PHONY : StudentTest3.o
 
 # target to build an object file
-Test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Test.cpp.o
-.PHONY : Test.cpp.o
+StudentTest3.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/StudentTest3.cpp.o
+.PHONY : StudentTest3.cpp.o
 
-Test.i: Test.cpp.i
+StudentTest3.i: StudentTest3.cpp.i
 
-.PHONY : Test.i
+.PHONY : StudentTest3.i
 
 # target to preprocess a source file
-Test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Test.cpp.i
-.PHONY : Test.cpp.i
+StudentTest3.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/StudentTest3.cpp.i
+.PHONY : StudentTest3.cpp.i
 
-Test.s: Test.cpp.s
+StudentTest3.s: StudentTest3.cpp.s
 
-.PHONY : Test.s
+.PHONY : StudentTest3.s
 
 # target to generate assembly for a file
-Test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Test.cpp.s
-.PHONY : Test.cpp.s
+StudentTest3.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/StudentTest3.cpp.s
+.PHONY : StudentTest3.cpp.s
 
 # Help Target
 help:
@@ -255,9 +255,9 @@ help:
 	@echo "... NumberWithUnits.o"
 	@echo "... NumberWithUnits.i"
 	@echo "... NumberWithUnits.s"
-	@echo "... Test.o"
-	@echo "... Test.i"
-	@echo "... Test.s"
+	@echo "... StudentTest3.o"
+	@echo "... StudentTest3.i"
+	@echo "... StudentTest3.s"
 .PHONY : help
 
 

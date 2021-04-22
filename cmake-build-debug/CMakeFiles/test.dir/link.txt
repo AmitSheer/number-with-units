@@ -1,1 +1,1 @@
-/usr/bin/clang++-9 -g CMakeFiles/test.dir/NumberWithUnits.cpp.o CMakeFiles/test.dir/Test.cpp.o -o test 
+/usr/bin/clang++-9 -g CMakeFiles/test.dir/NumberWithUnits.cpp.o CMakeFiles/test.dir/StudentTest3.cpp.o -o test 

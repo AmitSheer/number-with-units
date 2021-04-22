@@ -89,29 +89,29 @@ CMakeFiles/test.dir/NumberWithUnits.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/NumberWithUnits.cpp.s"
 	/usr/bin/clang++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amit/CLionProjects/number-with-units/NumberWithUnits.cpp -o CMakeFiles/test.dir/NumberWithUnits.cpp.s
 
-CMakeFiles/test.dir/Test.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/Test.cpp.o: ../Test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amit/CLionProjects/number-with-units/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/test.dir/Test.cpp.o"
-	/usr/bin/clang++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/Test.cpp.o -c /home/amit/CLionProjects/number-with-units/Test.cpp
+CMakeFiles/test.dir/StudentTest3.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/StudentTest3.cpp.o: ../StudentTest3.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/amit/CLionProjects/number-with-units/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/test.dir/StudentTest3.cpp.o"
+	/usr/bin/clang++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/StudentTest3.cpp.o -c /home/amit/CLionProjects/number-with-units/StudentTest3.cpp
 
-CMakeFiles/test.dir/Test.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/Test.cpp.i"
-	/usr/bin/clang++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amit/CLionProjects/number-with-units/Test.cpp > CMakeFiles/test.dir/Test.cpp.i
+CMakeFiles/test.dir/StudentTest3.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/StudentTest3.cpp.i"
+	/usr/bin/clang++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amit/CLionProjects/number-with-units/StudentTest3.cpp > CMakeFiles/test.dir/StudentTest3.cpp.i
 
-CMakeFiles/test.dir/Test.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/Test.cpp.s"
-	/usr/bin/clang++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amit/CLionProjects/number-with-units/Test.cpp -o CMakeFiles/test.dir/Test.cpp.s
+CMakeFiles/test.dir/StudentTest3.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/StudentTest3.cpp.s"
+	/usr/bin/clang++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amit/CLionProjects/number-with-units/StudentTest3.cpp -o CMakeFiles/test.dir/StudentTest3.cpp.s
 
 # Object files for target test
 test_OBJECTS = \
 "CMakeFiles/test.dir/NumberWithUnits.cpp.o" \
-"CMakeFiles/test.dir/Test.cpp.o"
+"CMakeFiles/test.dir/StudentTest3.cpp.o"
 
 # External object files for target test
 test_EXTERNAL_OBJECTS =
 
 test: CMakeFiles/test.dir/NumberWithUnits.cpp.o
-test: CMakeFiles/test.dir/Test.cpp.o
+test: CMakeFiles/test.dir/StudentTest3.cpp.o
 test: CMakeFiles/test.dir/build.make
 test: CMakeFiles/test.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/amit/CLionProjects/number-with-units/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable test"

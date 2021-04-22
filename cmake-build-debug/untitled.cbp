@@ -141,10 +141,7 @@
 			<Option target="test"/>
 			<Option target="Demo"/>
 		</Unit>
-		<Unit filename="/home/amit/CLionProjects/number-with-units/Test.cpp">
-			<Option target="test"/>
-		</Unit>
-		<Unit filename="/home/amit/CLionProjects/number-with-units/Test.hpp">
+		<Unit filename="/home/amit/CLionProjects/number-with-units/StudentTest3.cpp">
 			<Option target="test"/>
 		</Unit>
 		<Unit filename="/home/amit/CLionProjects/number-with-units/doctest.h">

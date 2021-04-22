@@ -15,9 +15,11 @@
 using namespace std;
 
 #include "NumberWithUnits.hpp"
+
+
 std::unordered_map<std::string, std::unordered_map<std::string, double>> ariel::NumberWithUnits::types_and_conversions = std::unordered_map<std::string, std::unordered_map<std::string, double>>();
 void ariel::NumberWithUnits::read_units(ifstream &units_file) {
-    types_and_conversions = std::unordered_map<std::string, std::unordered_map<std::string, double>>();
+//    types_and_conversions = std::unordered_map<std::string, std::unordered_map<std::string, double>>();
     string str;
     if (units_file.is_open()) {
         while (std::getline(units_file, str)) {
@@ -28,13 +30,6 @@ void ariel::NumberWithUnits::read_units(ifstream &units_file) {
             string right_type;
             istringstream stream(str);
             stream >> left_value >> left_type >> right_value >> right_type;
-//            cout<< left_type<<"->"<<right_type<<endl;
-//            for (int i = 0; i < left_type.length(); i++) {
-//                left_type.at((unsigned long)i) = std::tolower(left_type.at((unsigned long)i));
-//            }
-//            for (int i = 0; i < right_type.length(); i++) {
-//                right_type.at((unsigned long)i) = std::tolower(right_type.at((unsigned long)i));
-//            }
             update_units_map(left_value, left_type, right_value, right_type);
 
         }
@@ -59,8 +54,6 @@ void ariel::NumberWithUnits::update_units_map(const double &left_value, const st
             ariel::NumberWithUnits::types_and_conversions[left_type][item.first] =  item.second/into_right;
         }
     }
-//    cout<< left_type<<"->"<<right_type<<types_and_conversions[left_type][right_type]<<endl;
-//    cout<< right_type<<"->"<<left_type<<types_and_conversions[right_type][left_type]<<endl;
 }
 
 ariel::NumberWithUnits::NumberWithUnits(double value, const std::string& type) {
@@ -70,10 +63,27 @@ ariel::NumberWithUnits::NumberWithUnits(double value, const std::string& type) {
 }
 
 std::istream &ariel::operator>>(istream &is, ariel::NumberWithUnits &unit) {
-    is >> unit.unit_value;
-    is >> unit.unit_type;
-    while(isalpha(unit.unit_type.at(0))==0){is >> unit.unit_type;}
-    ariel::NumberWithUnits::type_validation(unit.unit_type,unit.unit_type);
+    double temp_val;
+    std::string temp_type;
+    char c;
+    is >> temp_val;
+    is>> c ;
+    while(c!=']'){
+        if(c!='['){
+            temp_type.insert(temp_type.end(),c);
+        }
+        is>>c;
+    }
+//    if(temp_type.at(0)=='['){
+//        temp_type.erase(0,1);
+//    }
+//    if(temp_type.at(temp_type.length()-1)==']'){
+//        temp_type.erase(temp_type.length()-1,1);
+//    }
+//    is.putback(temp_type)
+    ariel::NumberWithUnits::type_validation(temp_type,temp_type);
+    unit.unit_value=temp_val;
+    unit.unit_type=temp_type;
     return is;
 }
 
@@ -120,17 +130,18 @@ void ariel::NumberWithUnits::type_validation(const string &src_t, const string &
 
 bool ariel::NumberWithUnits::operator==(const ariel::NumberWithUnits &num) const {
     type_validation(this->unit_type,num.unit_type);
-    return this->unit_value== convert(num);
+    return std::abs(this->unit_value-convert(num))<EPSILON;
+
 }
 
 bool ariel::NumberWithUnits::operator<=(const ariel::NumberWithUnits &num) const {
     type_validation(this->unit_type,num.unit_type);
-    return this->unit_value<=convert(num);
+    return *this<num||*this==num;
 }
 
 bool ariel::NumberWithUnits::operator>=(const ariel::NumberWithUnits &num) const {
     type_validation(this->unit_type,num.unit_type);
-    return this->unit_value>=convert(num);
+    return *this>num||*this==num;
 }
 
 double ariel::NumberWithUnits::convert(const ariel::NumberWithUnits &num) const {
@@ -142,17 +153,17 @@ double ariel::NumberWithUnits::convert(const ariel::NumberWithUnits &num) const 
 
 bool ariel::NumberWithUnits::operator!=(const ariel::NumberWithUnits &num) const {
     type_validation(this->unit_type,num.unit_type);
-    return this->unit_value!=convert(num);
+    return std::abs(this->unit_value-convert(num))>EPSILON;
 }
 
 bool ariel::NumberWithUnits::operator<(const ariel::NumberWithUnits &num) const {
     type_validation(this->unit_type,num.unit_type);
-    return this->unit_value<convert(num);
+    return this->unit_value<convert(num)&& std::abs(convert(num)-this->unit_value)>EPSILON;
 }
 
 bool ariel::NumberWithUnits::operator>(const ariel::NumberWithUnits &num) const {
     type_validation(this->unit_type,num.unit_type);
-    return this->unit_value>convert(num);
+    return this->unit_value>convert(num)&&std::abs(this->unit_value- convert(num))>EPSILON;
 }
 
 

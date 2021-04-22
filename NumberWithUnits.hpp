@@ -11,6 +11,7 @@
 #include <sstream>
 #include <stdexcept>
 #include <utility>
+#define EPSILON 0.001
 
 namespace ariel{
     class NumberWithUnits{
@@ -52,8 +53,8 @@ namespace ariel{
         NumberWithUnits operator-(){
             return NumberWithUnits(unit_value*-1,unit_type);
         };
-        NumberWithUnits operator+(){
-            return NumberWithUnits(std::abs(unit_value),unit_type);
+        NumberWithUnits operator+() const{
+            return *this;
         };
 
         bool operator==(const NumberWithUnits& num) const;
